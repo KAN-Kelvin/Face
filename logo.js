@@ -1,11 +1,13 @@
 let logoImg_source;
 let logoImg;
 
-let maschera_linee; // 主纹理图（p5.Graphics 对象）
+let maschera_linee; // 主纹理图（p5.Graphics 对象）1.改
 let maschera_pattern; // 动态纹理缓冲区
 let maschera_puzzle;
 let maschera_connections;
-let maschera_shapes;
+let maschera_geometricpattern;
+let maschera_walker;
+let maschera_grid;
 
 function preload() {
   logoImg_source = loadImage("./assets/logo.svg");
@@ -22,13 +24,14 @@ function draw() {
   background(200);
   translate(width / 2, height / 2);
 
-  let m = maschera_walker; // 更换LOGO左脸的纹理图
+  let m = maschera_grid; // 2.改 更换LOGO左脸的纹理图
   // drawPattern(m);
   //drawLinee(m);
   // drawPuzzle(m);
   //drawConnections(m);
   //drawGeometricPattern(m);
-  drawWalker(m);
+  //drawWalker(m);
+  drawGrid(m);
 
   const masked = createImage(logoImg.width, logoImg.height);
   masked.copy(m, 0, 0, m.width, m.height, m.width / 4, 0, m.width, m.height);
@@ -56,15 +59,18 @@ function handleSetup() {
   logoImg.resize(0, image_height);
 
   maschera_linee = createGraphics(image_height, image_height);
-  maschera_pattern = createGraphics(image_height, image_height); // 第二个图形缓冲区
+  maschera_pattern = createGraphics(image_height, image_height); //3.改  第二个图形缓冲区
   maschera_puzzle = createGraphics(image_height, image_height);
   maschera_connections = createGraphics(image_height, image_height);
-  maschera_shapes = createGraphics(image_height, image_height);
+  maschera_geometricpattern = createGraphics(image_height, image_height);
+  maschera_walker = createGraphics(image_height, image_height);
+  maschera_grid = createGraphics(image_height, image_height);
 
-  setupLinee(maschera_linee); // 初始化纹理图的绘制内容
+  setupLinee(maschera_linee); // 4.改 初始化纹理图的绘制内容
   setupPattern(maschera_pattern);
   setupPuzzle(maschera_puzzle);
   setupConnections(maschera_connections);
   setupGeometricPattern(maschera_geometricpattern);
   setupWalker(maschera_walker);
+  setupGrid(maschera_grid);
 }
