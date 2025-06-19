@@ -14,11 +14,11 @@ function drawPuzzle(pg) {
 function setupPuzzle(pg) {
   pg.colorMode(HSB, 360, 100, 100);
   pg.noStroke();
-  cols = ceil(pg.width / tileSize);
-  rows = ceil(pg.height / tileSize);
+  cs = ceil(pg.width / tileSize);
+  rs = ceil(pg.height / tileSize);
   pieces = [];
-  for (let y = 0; y < rows; y++) {
-    for (let x = 0; x < cols; x++) {
+  for (let y = 0; y < rs; y++) {
+    for (let x = 0; x < cs; x++) {
       pieces.push(new PuzzlePiece(x * tileSize, y * tileSize, tileSize));
     }
   }
