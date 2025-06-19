@@ -25,7 +25,7 @@ let maschera_linee; // 主纹理图（p5.Graphics 对象）
 let maschera_pattern; // 动态纹理缓冲区
 let maschera_puzzle;
 let maschera_connections;
-let maschera_shapes;
+let maschera_geometricpattern;
 
 function preload() {
   // 预加载中初始化 faceMesh 模型
@@ -47,13 +47,13 @@ function setup() {
   maschera_pattern = createGraphics(200, 200); // 第二个图形缓冲区
   maschera_puzzle = createGraphics(200, 200);
   maschera_connections = createGraphics(200, 200);
-  maschera_shapes = createGraphics(200, 200);
+  maschera_geometricpattern = createGraphics(200, 200);
 
   setupLinee(maschera_linee); // 初始化纹理图的绘制内容
   setupPattern(maschera_pattern);
   setupPuzzle(maschera_puzzle);
   setupConnections(maschera_connections);
-  setupShapes(maschera_shapes);
+  setupGeometricPattern(maschera_geometricpattern);
 }
 
 function draw() {
@@ -69,36 +69,19 @@ function draw() {
   // image(video, 0, 0);
   pop();
 
+  let m = maschera_geometricpattern;
+
   // maschera_linee.clear(); // 清除主纹理图内容
-  // updateLinee(maschera_linee); // 更新第二个纹理（暂未使用）
-  // maschera_linee.push();
-  // maschera_linee.fill("black"); // 黑色填充
-  // maschera_linee.rect(0, 0, 100, 200); // 在主纹理图上画一个黑色矩形（演示用途）
-  // maschera_linee.pop();
+  // updateLinee(m); // 更新第二个纹理（暂未使用）
+  // drawPattern(m);
+  // drawPuzzle(m);
+  // drawConnections(m);
+  drawGeometricPattern(m);
 
-  // drawPattern(maschera_pattern);
-  // maschera_pattern.push();
-  // maschera_pattern.fill("black"); // 黑色填充
-  // maschera_pattern.rect(0, 0, 100, 200); // 在主纹理图上画一个黑色矩形（演示用途）
-  // maschera_pattern.pop();
-
-  // drawPuzzle(maschera_puzzle);
-  // maschera_puzzle.push();
-  // maschera_puzzle.fill("black"); // 黑色填充
-  // maschera_puzzle.rect(0, 0, 100, 200); // 在主纹理图上画一个黑色矩形（演示用途）
-  // maschera_puzzle.pop();
-
-  // drawConnections(maschera_connections);
-  // maschera_connections.push();
-  // maschera_connections.fill("black"); // 黑色填充
-  // maschera_connections.rect(0, 0, 100, 200); // 在主纹理图上画一个黑色矩形（演示用途）
-  // maschera_connections.pop();
-
-  drawShapes(maschera_shapes);
-  maschera_shapes.push();
-  maschera_shapes.fill("black"); // 黑色填充
-  maschera_shapes.rect(0, 0, 100, 200); // 在主纹理图上画一个黑色矩形（演示用途）
-  maschera_shapes.pop();
+  m.push();
+  m.fill("black"); // 黑色填充
+  m.rect(0, 0, 100, 200); // 在主纹理图上画一个黑色矩形（演示用途）
+  m.pop();
 
   // 遍历每一张脸，进行 UV 映射绘制
   for (let i = 0; i < faces.length; i++) {
@@ -106,7 +89,7 @@ function draw() {
 
     // 设置贴图
     noStroke();
-    texture(maschera_shapes); // 使用 maschera 图形作为纹理图
+    texture(m); // 使用 maschera 图形作为纹理图
     textureMode(NORMAL); // 设置纹理模式为 NORMAL（UV 坐标为0~1）
 
     beginShape(TRIANGLES); // 开始绘制三角形网格
