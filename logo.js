@@ -22,13 +22,12 @@ function draw() {
   background(200);
   translate(width / 2, height / 2);
 
-  let m = maschera_shapes;
+  let m = maschera_linee; // 更换LOGO左脸的纹理图
   // drawPattern(m);
-  // drawLinee(m); // 初始化纹理图的绘制内容
-  // drawPattern(m);
+  drawLinee(m);
   // drawPuzzle(m);
   // drawConnections(m);
-  drawShapes(m);
+  // drawGeometricPattern(m);
 
   const masked = createImage(logoImg.width, logoImg.height);
   masked.copy(m, 0, 0, m.width, m.height, m.width / 4, 0, m.width, m.height);
@@ -65,5 +64,5 @@ function handleSetup() {
   setupPattern(maschera_pattern);
   setupPuzzle(maschera_puzzle);
   setupConnections(maschera_connections);
-  setupShapes(maschera_shapes);
+  setupGeometricPattern(maschera_shapes);
 }

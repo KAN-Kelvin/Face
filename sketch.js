@@ -72,7 +72,7 @@ function draw() {
   let m = maschera_geometricpattern;
 
   // maschera_linee.clear(); // 清除主纹理图内容
-  // updateLinee(m); // 更新第二个纹理（暂未使用）
+  // drawLinee(m); // 更新第二个纹理（暂未使用）
   // drawPattern(m);
   // drawPuzzle(m);
   // drawConnections(m);

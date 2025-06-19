@@ -20,7 +20,7 @@ function setupLinee(pg) {
   }
 }
 
-function updateLinee(pg) {
+function drawLinee(pg) {
   // 🟢 每帧更新绘图 / Aggiorna la grafica in ogni frame
   pg.push();
   pg.translate(pg.width / 2, pg.height / 2);
