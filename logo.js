@@ -65,6 +65,6 @@ function handleSetup() {
   setupPattern(maschera_pattern);
   setupPuzzle(maschera_puzzle);
   setupConnections(maschera_connections);
-  setupGeometricPattern(maschera_shapes);
-  setupBlock(maschera_block);
+  setupGeometricPattern(maschera_geometricpattern);
+  setupWalker(maschera_walker);
 }
