@@ -27,6 +27,7 @@ let maschera_puzzle;
 let maschera_connections;
 let maschera_geometricpattern;
 let maschera_walker;
+let maschera_grid;
 
 function preload() {
   // 预加载中初始化 faceMesh 模型
@@ -50,6 +51,7 @@ function setup() {
   maschera_connections = createGraphics(200, 200);
   maschera_geometricpattern = createGraphics(200, 200);
   maschera_walker = createGraphics(200, 200);
+  maschera_grid = createGraphics(200, 200);
 
   setupLinee(maschera_linee); // 初始化纹理图的绘制内容
   setupPattern(maschera_pattern);
@@ -57,6 +59,7 @@ function setup() {
   setupConnections(maschera_connections);
   setupGeometricPattern(maschera_geometricpattern);
   setupWalker(maschera_walker);
+  setupGrid(maschera_grid);
 }
 
 function draw() {
@@ -72,15 +75,16 @@ function draw() {
   // image(video, 0, 0);
   pop();
 
-  let m = maschera_geometricpattern;
+  let m = maschera_grid;
 
   // maschera_linee.clear(); // 清除主纹理图内容
   // drawLinee(m); // 更新第二个纹理（暂未使用）
   // drawPattern(m);
   // drawPuzzle(m);
   // drawConnections(m);
-  drawGeometricPattern(m);
+  //drawGeometricPattern(m);
   // drawWalker(m);
+  drawGrid(m);
 
   m.push();
   m.fill("black"); // 黑色填充
