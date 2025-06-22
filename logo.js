@@ -34,6 +34,7 @@ function draw() {
   //drawWalker(m);
   //drawGrid(m);
   //drawVoronoi(m);
+  //drawCircles(m);
 
   const masked = createImage(logoImg.width, logoImg.height);
   masked.copy(m, 0, 0, m.width, m.height, m.width / 4, 0, m.width, m.height);
@@ -68,6 +69,7 @@ function handleSetup() {
   maschera_walker = createGraphics(image_height, image_height);
   maschera_grid = createGraphics(image_height, image_height);
   maschera_voronoi = createGraphics(image_height, image_height);
+  maschera_circles = createGraphics(image_height, image_height);
 
   setupLinee(maschera_linee); // 4.改 初始化纹理图的绘制内容
   setupPattern(maschera_pattern);
@@ -76,5 +78,6 @@ function handleSetup() {
   setupGeometricPattern(maschera_geometricpattern);
   setupWalker(maschera_walker);
   setupGrid(maschera_grid);
-  setupvoronoi(maschera_grid);
+  setupvoronoi(maschera_voronoi);
+  setupcircles(maschera_circles);
 }
