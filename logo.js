@@ -9,6 +9,7 @@ let maschera_geometricpattern;
 let maschera_walker;
 let maschera_grid;
 let maschera_voronoi;
+let maschera_circles;
 
 function preload() {
   logoImg_source = loadImage("./assets/logo.svg");
@@ -25,7 +26,7 @@ function draw() {
   background(200);
   translate(width / 2, height / 2);
 
-  let m = maschera_voronoi; // 2.改 更换LOGO左脸的纹理图
+  let m = maschera_circles; // 2.改 更换LOGO左脸的纹理图
   // drawPattern(m);
   //drawLinee(m);
   // drawPuzzle(m);
@@ -34,7 +35,7 @@ function draw() {
   //drawWalker(m);
   //drawGrid(m);
   //drawVoronoi(m);
-  //drawCircles(m);
+  drawCircles(m);
 
   const masked = createImage(logoImg.width, logoImg.height);
   masked.copy(m, 0, 0, m.width, m.height, m.width / 4, 0, m.width, m.height);
