@@ -75,16 +75,16 @@ function draw() {
   // image(video, 0, 0);
   pop();
 
-  let m = maschera_voronoi;
+  let m = maschera_walker;
 
   // maschera_linee.clear(); // 清除主纹理图内容
   // drawLinee(m); // 更新第二个纹理（暂未使用）
-  // drawPattern(m);
+  //drawPattern(m);
   // drawPuzzle(m);
   // drawConnections(m);
   //drawGeometricPattern(m);
-  //drawWalker(m);
-  drawVoronoi;
+  drawWalker(m);
+  //drawVoronoi;
 
   m.push();
   m.fill("black"); // 黑色填充
