@@ -25,9 +25,9 @@ function draw() {
   translate(width / 2, height / 2);
 
   let m = maschera_grid; // 2.改 更换LOGO左脸的纹理图
-  // drawPattern(m);
+  //drawPattern(m);
   //drawLinee(m);
-  // drawPuzzle(m);
+  //drawPuzzle(m);
   //drawConnections(m);
   //drawGeometricPattern(m);
   //drawWalker(m);
