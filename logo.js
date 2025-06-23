@@ -26,9 +26,9 @@ function draw() {
   translate(width / 2, height / 2);
 
   let m = maschera_voronoi; // 2.改 更换LOGO左脸的纹理图
-  // drawPattern(m);
+  //drawPattern(m);
   //drawLinee(m);
-  // drawPuzzle(m);
+  //drawPuzzle(m);
   //drawConnections(m);
   //drawGeometricPattern(m);
   //drawWalker(m);
@@ -76,5 +76,5 @@ function handleSetup() {
   setupGeometricPattern(maschera_geometricpattern);
   setupWalker(maschera_walker);
   setupGrid(maschera_grid);
-  setupvoronoi(maschera_voronoi);
+  setupVoronoi(maschera_voronoi);
 }
